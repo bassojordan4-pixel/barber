@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barber Shop - Le Style à la Française</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', serif; }
+  body { background: #1a1a1a; color: #f0e6d2; }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #0d0d0d, #2b2b2b);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #c9a227;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 {
+    color: #c9a227;
+    font-size: 2em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  nav a {
+    color: #f0e6d2;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1.1em;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #c9a227; }
+
+  /* HERO */
+  .hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero h2 {
+    font-size: 3.5em;
+    color: #c9a227;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px #000;
+  }
+  .hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  .btn {
+    background: #c9a227;
+    color: #1a1a1a;
+    padding: 15px 40px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    border-radius: 4px;
+  }
+  .btn:hover {
+    background: #f0e6d2;
+    transform: scale(1.05);
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .services h2 {
+    font-size: 2.5em;
+    color: #c9a227;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: #2b2b2b;
+    padding: 30px;
+    border: 2px solid #c9a227;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(201,162,39,0.4);
+  }
+  .service-card h3 {
+    color: #c9a227;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+  }
+  .service-card .price {
+    font-size: 1.8em;
+    color: #f0e6d2;
+    margin: 15px 0;
+  }
+
+  /* RÉSERVATION */
+  .booking {
+    background: #0d0d0d;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .booking h2 {
+    color: #c9a227;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  form input, form select {
+    padding: 12px;
+    border: 2px solid #c9a227;
+    background: #1a1a1a;
+    color: #f0e6d2;
+    font-size: 1em;
+    border-radius: 4px;
+  }
+  form input:focus, form select:focus {
+    outline: none;
+    border-color: #f0e6d2;
+  }
+  #confirmation {
+    margin-top: 25px;
+    color: #c9a227;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0d0d0d;
+    text-align: center;
+    padding: 30px;
+    color: #c9a227;
+    border-top: 3px solid #c9a227;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✂ Barber Shop</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Réservation</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>L'Art du Style</h2>
+  <p>Coupes classiques, rasages traditionnels et soins de la barbe dans une ambiance authentique.</p>
+  <button class="btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+    Réserver maintenant
+  </button>
+</section>
+
+<section class="services" id="services">
+  <h2>Nos Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Coupe Classique</h3>
+      <p>Coupe personnalisée avec finitions au rasoir.</p>
+      <div class="price">20 €</div>
+    </div>
+    <div class="service-card">
+      <h3>Rasage Traditionnel</h3>
+      <p>Rasage à la serviette chaude et lame droite.</p>
+      <div class="price">15 €</div>
+    </div>
+    <div class="service-card">
+      <h3>Taille de Barbe</h3>
+      <p>Entretien et sculpture de votre barbe.</p>
+      <div class="price">12 €</div>
+    </div>
+    <div class="service-card">
+      <h3>Pack Complet</h3>
+      <p>Coupe + rasage + soin visage.</p>
+      <div class="price">40 €</div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <h2>Réservez votre rendez-vous</h2>
+  <form id="bookingForm">
+    <input type="text" id="name" placeholder="Votre nom" required>
+    <input type="email" id="email" placeholder="Votre email" required>
+    <select id="service" required>
+      <option value="">Choisir un service...</option>
+      <option>Coupe Classique - 20 €</option>
+      <option>Rasage Traditionnel - 15 €</option>
+      <option>Taille de Barbe - 12 €</option>
+      <option>Pack Complet - 40 €</option>
+    </select>
+    <input type="datetime-local" id="date" required>
+    <button type="submit" class="btn">Confirmer</button>
+  </form>
+  <div id="confirmation"></div>
+</section>
+
+<footer>
+  <p>© 2025 Barber Shop — Tous droits réservés</p>
+</footer>
+
+<script>
+  const form = document.getElementById('bookingForm');
+  const confirmation = document.getElementById('confirmation');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+
+    if (!name || !email || !service || !date) {
+      confirmation.style.color = '#ff4d4d';
+      confirmation.textContent = 'Merci de remplir tous les champs.';
+      return;
+    }
+
+    const dateFormatted = new Date(date).toLocaleString('fr-FR', {
+      weekday: 'long', day: 'numeric', month: 'long',
+      year: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+
+    confirmation.style.color = '#c9a227';
+    confirmation.innerHTML = `✅ Merci <strong>${name}</strong> !<br>
+      Rendez-vous confirmé pour <strong>${service}</strong><br>
+      le <strong>${dateFormatted}</strong>.<br>
+      Un email sera envoyé à ${email}.`;
+
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
